@@ -1,0 +1,98 @@
+// Your JavaScript code here
+var allNames = [
+    "Khrizzelle", "Bhupinder", "Jagdeep", "Domenic", "Sonam", "Rushi",
+    "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
+    "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Arshdeep", "Foram"
+];
+
+// Function to generate team assignments for a specific week and day
+function generateTeamAssignments(week, day) {
+    var shuffledNames = [...allNames].sort(() => Math.random() - 0.5);
+    var matching = shuffledNames[0];
+
+    var reservedForceList = [...allNames];
+    reservedForceList.splice(reservedForceList.indexOf(matching), 1);
+
+    var blueLightsExemptionPeople = [
+        "Khrizzelle", "Arshdeep", "Panamdeep", "Pabdeep", "Sonam", "Jagdeep"
+    ];
+
+    var blueLights = [];
+    while (blueLights.length < 4) {
+        var randomIndex = Math.floor(Math.random() * reservedForceList.length);
+        var selectedName = reservedForceList[randomIndex];
+        if (!blueLightsExemptionPeople.includes(selectedName)) {
+            blueLights.push(selectedName);
+            reservedForceList.splice(randomIndex, 1);
+        }
+    }
+
+    var randomIndex = Math.floor(Math.random() * reservedForceList.length);
+    var redBasket = reservedForceList[randomIndex];
+    reservedForceList.splice(randomIndex, 1);
+
+    randomIndex = Math.floor(Math.random() * reservedForceList.length);
+    var closing = reservedForceList[randomIndex];
+    reservedForceList.splice(randomIndex, 1);
+
+    var induction = [];
+    while (induction.length < 9) {
+        randomIndex = Math.floor(Math.random() * reservedForceList.length);
+        induction.push(reservedForceList[randomIndex]);
+        reservedForceList.splice(randomIndex, 1);
+    }
+
+    // Update HTML elements with generated data
+    document.getElementById("matching" + week + day).innerText = matching;
+    document.getElementById("redBasket" + week + day).innerText = redBasket;
+    document.getElementById("closing" + week + day).innerText = closing;
+
+    var blueLightsList = document.getElementById("blueLights" + week + day);
+    if (blueLightsList) {
+        blueLights.forEach(function (name) {
+            var listItem = document.createElement("li");
+            listItem.innerText = name;
+            blueLightsList.appendChild(listItem);
+        });
+    }
+    
+    var inductionList = document.getElementById("induction" + week + day);
+    if (inductionList) {
+        induction.forEach(function (name) {
+            var listItem = document.createElement("li");
+            listItem.innerText = name;
+            inductionList.appendChild(listItem);
+        });
+    }
+    
+    
+}
+
+// Generate team assignments for each day and week
+// Week 1
+generateTeamAssignments("Week1", "Sunday");
+generateTeamAssignments("Week1", "Monday");
+generateTeamAssignments("Week1", "Tuesday");
+generateTeamAssignments("Week1", "Wednesday");
+generateTeamAssignments("Week1", "Thursday");
+
+// Week 2
+generateTeamAssignments("Week2", "Sunday");
+generateTeamAssignments("Week2", "Monday");
+generateTeamAssignments("Week2", "Tuesday");
+generateTeamAssignments("Week2", "Wednesday");
+generateTeamAssignments("Week2", "Thursday");
+
+// Week 3
+generateTeamAssignments("Week3", "Sunday");
+generateTeamAssignments("Week3", "Monday");
+generateTeamAssignments("Week3", "Tuesday");
+generateTeamAssignments("Week3", "Wednesday");
+generateTeamAssignments("Week3", "Thursday");
+
+// Week 4
+generateTeamAssignments("Week4", "Sunday");
+generateTeamAssignments("Week4", "Monday");
+generateTeamAssignments("Week4", "Tuesday");
+generateTeamAssignments("Week4", "Wednesday");
+generateTeamAssignments("Week4", "Thursday");

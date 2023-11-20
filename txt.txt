@@ -1,0 +1,361 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Assignments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Team Assignments for Sunday -->
+    <!-- <div class="container"> -->
+<!-- Week 1 -->
+    <section id="page1">
+
+            <div class="output">
+                <h2>Week 1</h2>
+                <h3>Matching</h3>
+                <table>
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                    </tr>
+                    <tr>
+                        <td id="matchingSunday"></td>
+                        <td id="matchingMonday"></td>
+                        <td id="matchingTuesday"></td>
+                        <td id="matchingWednesday"></td>
+                        <td id="matchingThursday"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="output">
+                <h3>Red Basket & Jackpot</h3>
+                <table>
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                    </tr>
+                    <tr>
+                    <td id="redBasketSunday"></td>
+                    <td id="redBasketMonday"></td>
+                    <td id="redBasketTuesday"></td>
+                    <td id="redBasketWednesday"></td>
+                    <td id="redBasketThursday"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="output">
+            <h3>Closing</h3>
+            <table>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+                <tr>
+                    <td id="closingSunday"></td>
+                    <td id="closingMonday"></td>
+                    <td id="closingTuesday"></td>
+                    <td id="closingWednesday"></td>
+                    <td id="closingThursday"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="output">
+            <h3>Blue Lights</h3>
+            <table>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+                <tr>
+                    <td id="blueLightsSunday"></td>
+                    <td id="blueLightsMonday"></td>
+                    <td id="blueLightsTuesday"></td>
+                    <td id="blueLightsWednesday"></td>
+                    <td id="blueLightsThursday"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+<!-- Week 2 -->
+    <section id="page1">
+        <h2>Week 2</h2>
+            <div class="output">
+                <h3>Matching</h3>
+                <table>
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                    </tr>
+                    <tr>
+                        <td id="matchingSunday"></td>
+                        <td id="matchingMonday"></td>
+                        <td id="matchingTuesday"></td>
+                        <td id="matchingWednesday"></td>
+                        <td id="matchingThursday"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="output">
+                <h3>Red Basket & Jackpot</h3>
+                <table>
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                    </tr>
+                    <tr>
+                    <td id="redBasketSunday"></td>
+                    <td id="redBasketMonday"></td>
+                    <td id="redBasketTuesday"></td>
+                    <td id="redBasketWednesday"></td>
+                    <td id="redBasketThursday"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="output">
+            <h3>Closing</h3>
+            <table>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+                <tr>
+                    <td id="closingSunday"></td>
+                    <td id="closingMonday"></td>
+                    <td id="closingTuesday"></td>
+                    <td id="closingWednesday"></td>
+                    <td id="closingThursday"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="output">
+            <h3>Blue Lights</h3>
+            <table>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+                <tr>
+                    <td id="blueLightsSunday"></td>
+                    <td id="blueLightsMonday"></td>
+                    <td id="blueLightsTuesday"></td>
+                    <td id="blueLightsWednesday"></td>
+                    <td id="blueLightsThursday"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+<!-- Week 3 -->
+    <section id="page1">
+        <h2>Week 3</h2>
+            <div class="output">
+                <h3>Matching</h3>
+                <table>
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                    </tr>
+                    <tr>
+                        <td id="matchingSunday"></td>
+                        <td id="matchingMonday"></td>
+                        <td id="matchingTuesday"></td>
+                        <td id="matchingWednesday"></td>
+                        <td id="matchingThursday"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="output">
+                <h3>Red Basket & Jackpot</h3>
+                <table>
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                    </tr>
+                    <tr>
+                    <td id="redBasketSunday"></td>
+                    <td id="redBasketMonday"></td>
+                    <td id="redBasketTuesday"></td>
+                    <td id="redBasketWednesday"></td>
+                    <td id="redBasketThursday"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="output">
+            <h3>Closing</h3>
+            <table>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+                <tr>
+                    <td id="closingSunday"></td>
+                    <td id="closingMonday"></td>
+                    <td id="closingTuesday"></td>
+                    <td id="closingWednesday"></td>
+                    <td id="closingThursday"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="output">
+            <h3>Blue Lights</h3>
+            <table>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+                <tr>
+                    <td id="blueLightsSunday"></td>
+                    <td id="blueLightsMonday"></td>
+                    <td id="blueLightsTuesday"></td>
+                    <td id="blueLightsWednesday"></td>
+                    <td id="blueLightsThursday"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+<!-- Week 4 -->
+    <section id="page1">
+        <h2>Week 4</h2>
+            <div class="output">
+                <h3>Matching</h3>
+                <table>
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                    </tr>
+                    <tr>
+                        <td id="matchingSunday"></td>
+                        <td id="matchingMonday"></td>
+                        <td id="matchingTuesday"></td>
+                        <td id="matchingWednesday"></td>
+                        <td id="matchingThursday"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="output">
+                <h3>Red Basket & Jackpot</h3>
+                <table>
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                    </tr>
+                    <tr>
+                    <td id="redBasketSunday"></td>
+                    <td id="redBasketMonday"></td>
+                    <td id="redBasketTuesday"></td>
+                    <td id="redBasketWednesday"></td>
+                    <td id="redBasketThursday"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="output">
+            <h3>Closing</h3>
+            <table>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+                <tr>
+                    <td id="closingSunday"></td>
+                    <td id="closingMonday"></td>
+                    <td id="closingTuesday"></td>
+                    <td id="closingWednesday"></td>
+                    <td id="closingThursday"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="output">
+            <h3>Blue Lights</h3>
+            <table>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+                <tr>
+                    <td id="blueLightsSunday"></td>
+                    <td id="blueLightsMonday"></td>
+                    <td id="blueLightsTuesday"></td>
+                    <td id="blueLightsWednesday"></td>
+                    <td id="blueLightsThursday"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+        
+    <!-- </div> -->
+
+    <!-- Team Assignments for Sunday -->
+
+
+    <!-- Team Assignments for Monday -->
+
+
+    <!-- Team Assignments for Tuesday -->
+
+
+    <!-- Team Assignments for Wednesday -->
+    
+
+    <!-- Team Assignments for Thursday -->
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
