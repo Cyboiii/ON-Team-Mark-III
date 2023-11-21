@@ -19,12 +19,22 @@ function generateAssignments(iterations) {
             "Khrizzelle", "Panamdeep", "Sonam", "Jagdeep"
         ];
 
-        var BlueLights = [];
-        while (BlueLights.length < 4) {
+        var BlueLights10To12 = [];
+        var BlueLights12ToOn = [];
+
+        while (BlueLights10To12.length < 2) {
             var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
             var selectedName = SundayReservedForce[randomIndex];
             if (!BlueLightsExemptionPeople.includes(selectedName)) {
-                BlueLights.push(selectedName);
+                BlueLights10To12.push(selectedName);
+                SundayReservedForce.splice(randomIndex, 1);
+            }
+        }
+        while (BlueLights12ToOn.length < 2) {
+            var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+            var selectedName = SundayReservedForce[randomIndex];
+            if (!BlueLightsExemptionPeople.includes(selectedName)) {
+                BlueLights12ToOn.push(selectedName);
                 SundayReservedForce.splice(randomIndex, 1);
             }
         }
@@ -37,19 +47,35 @@ function generateAssignments(iterations) {
         var SundayClosing = SundayReservedForce[randomIndex];
         SundayReservedForce.splice(randomIndex, 1);
 
-        var SundayInduction = [];
-        while (SundayInduction.length < 9) {
+        var InductionFirstSecondThree = [];
+        var InductionFourthFifthSixth = [];
+        var InductionSeventhEighthNinth = [];
+
+        while (InductionFirstSecondThree.length < 3) {
             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
-            SundayInduction.push(SundayReservedForce[randomIndex]);
+            InductionFirstSecondThree.push(SundayReservedForce[randomIndex]);
+            SundayReservedForce.splice(randomIndex, 1);
+        }
+        while (InductionFourthFifthSixth.length < 3) {
+            randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+            InductionFourthFifthSixth.push(SundayReservedForce[randomIndex]);
+            SundayReservedForce.splice(randomIndex, 1);
+        }
+        while (InductionSeventhEighthNinth.length < 3) {
+            randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+            InductionSeventhEighthNinth.push(SundayReservedForce[randomIndex]);
             SundayReservedForce.splice(randomIndex, 1);
         }
 
         results.push({
             matching: SundayMatching,
             redBasket: SundayRedBasket,
-            blueLights: [...BlueLights],
             closing: SundayClosing,
-            induction: [...SundayInduction],
+            blueLights10To12: [...BlueLights10To12],
+            blueLights12ToOn: [...BlueLights12ToOn],
+            induction1To3: [...InductionFirstSecondThree],
+            induction4To6: [...InductionFourthFifthSixth],
+            induction7To9: [...InductionSeventhEighthNinth],
             reservedForce: [...SundayReservedForce]
         });
     }
@@ -74,9 +100,12 @@ assignments.forEach(function (assignment, index) {
             <th>Weekday</th>
             <th>Matching</th>
             <th>RedBasket & Jackpot</th>
-            <th>BlueLights</th>
             <th>Closing</th>
-            <th>Induction</th>
+            <th>BlueLights 10 to 12</th>
+            <th>BlueLights 12 to Onwards</th>
+            <th>Induction 10 to 12</th>
+            <th>Induction 12 to 2</th>
+            <th>Induction 2 to 4</th>
             <th>Reserved Force</th>
         `;
         table.appendChild(headerRow);
@@ -88,9 +117,12 @@ assignments.forEach(function (assignment, index) {
         <td>${daysOfWeek[dayIndex]}</td>
         <td>${assignment.matching}</td>
         <td>${assignment.redBasket}</td>
-        <td class="blue-lights-cell">${formatBlueLights(assignment.blueLights)}</td>
         <td>${assignment.closing}</td>
-        <td class="induction-cell">${formatInduction(assignment.induction)}</td>
+        <td>${assignment.blueLights10To12.join(", ")}</td>
+        <td>${assignment.blueLights12ToOn.join(", ")}</td>
+        <td>${assignment.induction1To3.join(", ")}</td>
+        <td>${assignment.induction4To6.join(", ")}</td>
+        <td>${assignment.induction7To9.join(", ")}</td>
         <td>${assignment.reservedForce.join(", ")}</td>
     `;
     outputContainer.lastChild.appendChild(row);
@@ -98,28 +130,17 @@ assignments.forEach(function (assignment, index) {
     dayIndex = (dayIndex + 1) % daysOfWeek.length;
 });
 
-function formatInduction(inductionNames) {
-    var formattedInduction = "";
-    inductionNames.forEach(function (name) {
-        formattedInduction += `<div>${name}</div>`;
-    });
-    return formattedInduction;
-}
 
-function formatBlueLights(blueLightsNames) {
-    var formattedBlueLights = '<div class="blue-lights-cell">';
-    var counter = 0;
+// BlueLight 10 to 12
+var SundayBlueLight10to12
+var MondayBlueLight10to12
+var TuesdayBlueLight10to12
+var WednesdayBlueLight10to12
+var ThursdayBlueLight10to12
 
-    blueLightsNames.forEach(function (name) {
-        formattedBlueLights += `<div>${name}</div>`;
-        counter++;
-
-        // Insert a line break after every 2 names
-        if (counter % 2 === 0 && counter !== blueLightsNames.length) {
-            formattedBlueLights += '</div><div class="blue-lights-cell">';
-        }
-    });
-
-    formattedBlueLights += '</div>';
-    return formattedBlueLights;
-}
+// BlueLights 12 to Onwards
+var SundayBlueLight12toOn
+var MondayBlueLight12toOn
+var TuesdayBlueLight12toOn
+var WednesdayBlueLight12toOn
+var ThursdayBlueLight12toOn
