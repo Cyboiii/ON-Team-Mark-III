@@ -1,5 +1,8 @@
 .container {
-    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid #ccc;
     /* padding: 5px; */
 }
@@ -15,12 +18,22 @@ table, th, td {
 }
 
 th, td {
-    padding: 5px;
-    text-align: left;
+    padding: 15px;
+}
+th{
+    
+    text-align: center;
+    
+}
+td{
+    padding: 10px;
+    text-align: center;
 }
 body{
-    font-size: 10px;
+    /* padding: 5%; */
+    line-height: 20px;
+    font-size: 12px;
 }
-#mainContainer{
-    display: flex;
+#header{
+    text-align: center;
 }

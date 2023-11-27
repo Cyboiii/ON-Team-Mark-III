@@ -1,98 +1,467 @@
-// Your JavaScript code here
-var allNames = [
-    "Khrizzelle", "Bhupinder", "Jagdeep", "Domenic", "Sonam", "Rushi",
-    "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
-    "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Arshdeep", "Foram"
-];
 
-// Function to generate team assignments for a specific week and day
-function generateTeamAssignments(week, day) {
-    var shuffledNames = [...allNames].sort(() => Math.random() - 0.5);
-    var matching = shuffledNames[0];
+// // Monday Week 1----------------------------------------------------------------------------------------------------------------------------
 
-    var reservedForceList = [...allNames];
-    reservedForceList.splice(reservedForceList.indexOf(matching), 1);
+// function generateAssignments(iterations) {
+//     var allNames = [
+//         "Khrizzelle", "Bhupinder", "Jagdeep", "Domenic", "Sonam", "Rushi",
+//         "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
+//         "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Arshdeep", "Foram"
+//     ];
 
-    var blueLightsExemptionPeople = [
-        "Khrizzelle", "Arshdeep", "Panamdeep", "Pabdeep", "Sonam", "Jagdeep"
-    ];
+//     var results = [];
 
-    var blueLights = [];
-    while (blueLights.length < 4) {
-        var randomIndex = Math.floor(Math.random() * reservedForceList.length);
-        var selectedName = reservedForceList[randomIndex];
-        if (!blueLightsExemptionPeople.includes(selectedName)) {
-            blueLights.push(selectedName);
-            reservedForceList.splice(randomIndex, 1);
-        }
-    }
+//     for (var i = 0; i < iterations; i++) {
+//         var shuffledNames = [...allNames].sort(() => Math.random() - 0.5);
+//         var SundayMatching = shuffledNames[0];
 
-    var randomIndex = Math.floor(Math.random() * reservedForceList.length);
-    var redBasket = reservedForceList[randomIndex];
-    reservedForceList.splice(randomIndex, 1);
+//         var SundayReservedForceList = [...allNames];
+//         SundayReservedForceList.splice(SundayReservedForceList.indexOf(SundayMatching), 1);
+//         var SundayReservedForce = [...SundayReservedForceList];
 
-    randomIndex = Math.floor(Math.random() * reservedForceList.length);
-    var closing = reservedForceList[randomIndex];
-    reservedForceList.splice(randomIndex, 1);
+//         var BlueLightsExemptionPeople = [
+//             "Khrizzelle", "Panamdeep", "Sonam", "Jagdeep"
+//         ];
 
-    var induction = [];
-    while (induction.length < 9) {
-        randomIndex = Math.floor(Math.random() * reservedForceList.length);
-        induction.push(reservedForceList[randomIndex]);
-        reservedForceList.splice(randomIndex, 1);
-    }
+//         var BlueLights10To12 = [];
+//         var BlueLights12ToOn = [];
 
-    // Update HTML elements with generated data
-    document.getElementById("matching" + week + day).innerText = matching;
-    document.getElementById("redBasket" + week + day).innerText = redBasket;
-    document.getElementById("closing" + week + day).innerText = closing;
+//         while (BlueLights10To12.length < 2) {
+//             var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             var selectedName = SundayReservedForce[randomIndex];
+//             if (!BlueLightsExemptionPeople.includes(selectedName)) {
+//                 BlueLights10To12.push(selectedName);
+//                 SundayReservedForce.splice(randomIndex, 1);
+//             }
+//         }
+//         while (BlueLights12ToOn.length < 2) {
+//             var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             var selectedName = SundayReservedForce[randomIndex];
+//             if (!BlueLightsExemptionPeople.includes(selectedName)) {
+//                 BlueLights12ToOn.push(selectedName);
+//                 SundayReservedForce.splice(randomIndex, 1);
+//             }
+//         }
 
-    var blueLightsList = document.getElementById("blueLights" + week + day);
-    if (blueLightsList) {
-        blueLights.forEach(function (name) {
-            var listItem = document.createElement("li");
-            listItem.innerText = name;
-            blueLightsList.appendChild(listItem);
-        });
-    }
+//         var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//         var SundayRedBasket = SundayReservedForce[randomIndex];
+//         SundayReservedForce.splice(randomIndex, 1);
+
+//         randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//         var SundayClosing = SundayReservedForce[randomIndex];
+//         SundayReservedForce.splice(randomIndex, 1);
+
+//         var InductionFirstSecondThree = [];
+//         var InductionFourthFifthSixth = [];
+//         var InductionSeventhEighthNinth = [];
+
+//         while (InductionFirstSecondThree.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionFirstSecondThree.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+//         while (InductionFourthFifthSixth.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionFourthFifthSixth.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+//         while (InductionSeventhEighthNinth.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionSeventhEighthNinth.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+
+//         results.push({
+//             matching: SundayMatching,
+//             redBasket: SundayRedBasket,
+//             closing: SundayClosing,
+//             blueLights10To12: [...BlueLights10To12],
+//             blueLights12ToOn: [...BlueLights12ToOn],
+//             induction1To3: [...InductionFirstSecondThree],
+//             induction4To6: [...InductionFourthFifthSixth],
+//             induction7To9: [...InductionSeventhEighthNinth],
+//             reservedForce: [...SundayReservedForce]
+//         });
+//     }
+
+//     return results;
+// }
+
+// var outputContainer = document.getElementById("output");
+// var assignments = generateAssignments(1);
+
+
+// var dayIndex = 0;
+
+// assignments.forEach(function (assignment) {
+
+//     var row = document.createElement("tr");
+//     row.innerHTML = `
+//         <td>Monday</td>
+//         <td>${assignment.matching}</td>
+//         <td>${assignment.redBasket}</td>
+//         <td>${assignment.closing}</td>
+//         <td>${assignment.blueLights10To12.join("<br>")}</td>
+//         <td>${assignment.blueLights12ToOn.join("<br>")}</td>
+//         <td>${assignment.induction1To3.join("<br>")}</td>
+//         <td>${assignment.induction4To6.join("<br>")}</td>
+//         <td>${assignment.induction7To9.join("<br>")}</td>
+//         <td>${assignment.reservedForce.join("<br>")}</td>
+//     `;
+//     outputContainer.lastChild.appendChild(row);
+
     
-    var inductionList = document.getElementById("induction" + week + day);
-    if (inductionList) {
-        induction.forEach(function (name) {
-            var listItem = document.createElement("li");
-            listItem.innerText = name;
-            inductionList.appendChild(listItem);
-        });
-    }
+// });
+
+// // Tuesday Week 1----------------------------------------------------------------------------------------------------------------------------
+
+// function generateAssignments(iterations) {
+//     var allNames = [
+//         "Khrizzelle", "Bhupinder", "Jagdeep", "Domenic", "Sonam", "Rushi",
+//         "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
+//         "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Arshdeep", "Foram"
+//     ];
+
+//     var results = [];
+
+//     for (var i = 0; i < iterations; i++) {
+//         var shuffledNames = [...allNames].sort(() => Math.random() - 0.5);
+//         var SundayMatching = shuffledNames[0];
+
+//         var SundayReservedForceList = [...allNames];
+//         SundayReservedForceList.splice(SundayReservedForceList.indexOf(SundayMatching), 1);
+//         var SundayReservedForce = [...SundayReservedForceList];
+
+//         var BlueLightsExemptionPeople = [
+//             "Khrizzelle", "Panamdeep", "Sonam", "Jagdeep"
+//         ];
+
+//         var BlueLights10To12 = [];
+//         var BlueLights12ToOn = [];
+
+//         while (BlueLights10To12.length < 2) {
+//             var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             var selectedName = SundayReservedForce[randomIndex];
+//             if (!BlueLightsExemptionPeople.includes(selectedName)) {
+//                 BlueLights10To12.push(selectedName);
+//                 SundayReservedForce.splice(randomIndex, 1);
+//             }
+//         }
+//         while (BlueLights12ToOn.length < 2) {
+//             var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             var selectedName = SundayReservedForce[randomIndex];
+//             if (!BlueLightsExemptionPeople.includes(selectedName)) {
+//                 BlueLights12ToOn.push(selectedName);
+//                 SundayReservedForce.splice(randomIndex, 1);
+//             }
+//         }
+
+//         var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//         var SundayRedBasket = SundayReservedForce[randomIndex];
+//         SundayReservedForce.splice(randomIndex, 1);
+
+//         randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//         var SundayClosing = SundayReservedForce[randomIndex];
+//         SundayReservedForce.splice(randomIndex, 1);
+
+//         var InductionFirstSecondThree = [];
+//         var InductionFourthFifthSixth = [];
+//         var InductionSeventhEighthNinth = [];
+
+//         while (InductionFirstSecondThree.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionFirstSecondThree.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+//         while (InductionFourthFifthSixth.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionFourthFifthSixth.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+//         while (InductionSeventhEighthNinth.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionSeventhEighthNinth.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+
+//         results.push({
+//             matching: SundayMatching,
+//             redBasket: SundayRedBasket,
+//             closing: SundayClosing,
+//             blueLights10To12: [...BlueLights10To12],
+//             blueLights12ToOn: [...BlueLights12ToOn],
+//             induction1To3: [...InductionFirstSecondThree],
+//             induction4To6: [...InductionFourthFifthSixth],
+//             induction7To9: [...InductionSeventhEighthNinth],
+//             reservedForce: [...SundayReservedForce]
+//         });
+//     }
+
+//     return results;
+// }
+
+// var outputContainer = document.getElementById("output");
+// var assignments = generateAssignments(1);
+
+
+// var dayIndex = 0;
+
+// assignments.forEach(function (assignment) {
+
+//     var row = document.createElement("tr");
+//     row.innerHTML = `
+//         <td>Tuesday</td>
+//         <td>${assignment.matching}</td>
+//         <td>${assignment.redBasket}</td>
+//         <td>${assignment.closing}</td>
+//         <td>${assignment.blueLights10To12.join("<br>")}</td>
+//         <td>${assignment.blueLights12ToOn.join("<br>")}</td>
+//         <td>${assignment.induction1To3.join("<br>")}</td>
+//         <td>${assignment.induction4To6.join("<br>")}</td>
+//         <td>${assignment.induction7To9.join("<br>")}</td>
+//         <td>${assignment.reservedForce.join("<br>")}</td>
+//     `;
+//     outputContainer.lastChild.appendChild(row);
+
     
+// });
+
+// // Wednesday Week 1----------------------------------------------------------------------------------------------------------------------------
+
+// function generateAssignments(iterations) {
+//     var allNames = [
+//         "Khrizzelle", "Bhupinder", "Jagdeep", "Domenic", "Sonam", "Rushi",
+//         "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
+//         "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Arshdeep", "Foram"
+//     ];
+
+//     var results = [];
+
+//     for (var i = 0; i < iterations; i++) {
+//         var shuffledNames = [...allNames].sort(() => Math.random() - 0.5);
+//         var SundayMatching = shuffledNames[0];
+
+//         var SundayReservedForceList = [...allNames];
+//         SundayReservedForceList.splice(SundayReservedForceList.indexOf(SundayMatching), 1);
+//         var SundayReservedForce = [...SundayReservedForceList];
+
+//         var BlueLightsExemptionPeople = [
+//             "Khrizzelle", "Panamdeep", "Sonam", "Jagdeep"
+//         ];
+
+//         var BlueLights10To12 = [];
+//         var BlueLights12ToOn = [];
+
+//         while (BlueLights10To12.length < 2) {
+//             var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             var selectedName = SundayReservedForce[randomIndex];
+//             if (!BlueLightsExemptionPeople.includes(selectedName)) {
+//                 BlueLights10To12.push(selectedName);
+//                 SundayReservedForce.splice(randomIndex, 1);
+//             }
+//         }
+//         while (BlueLights12ToOn.length < 2) {
+//             var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             var selectedName = SundayReservedForce[randomIndex];
+//             if (!BlueLightsExemptionPeople.includes(selectedName)) {
+//                 BlueLights12ToOn.push(selectedName);
+//                 SundayReservedForce.splice(randomIndex, 1);
+//             }
+//         }
+
+//         var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//         var SundayRedBasket = SundayReservedForce[randomIndex];
+//         SundayReservedForce.splice(randomIndex, 1);
+
+//         randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//         var SundayClosing = SundayReservedForce[randomIndex];
+//         SundayReservedForce.splice(randomIndex, 1);
+
+//         var InductionFirstSecondThree = [];
+//         var InductionFourthFifthSixth = [];
+//         var InductionSeventhEighthNinth = [];
+
+//         while (InductionFirstSecondThree.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionFirstSecondThree.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+//         while (InductionFourthFifthSixth.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionFourthFifthSixth.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+//         while (InductionSeventhEighthNinth.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionSeventhEighthNinth.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+
+//         results.push({
+//             matching: SundayMatching,
+//             redBasket: SundayRedBasket,
+//             closing: SundayClosing,
+//             blueLights10To12: [...BlueLights10To12],
+//             blueLights12ToOn: [...BlueLights12ToOn],
+//             induction1To3: [...InductionFirstSecondThree],
+//             induction4To6: [...InductionFourthFifthSixth],
+//             induction7To9: [...InductionSeventhEighthNinth],
+//             reservedForce: [...SundayReservedForce]
+//         });
+//     }
+
+//     return results;
+// }
+
+// var outputContainer = document.getElementById("output");
+// var assignments = generateAssignments(1);
+
+
+// var dayIndex = 0;
+
+// assignments.forEach(function (assignment) {
+
+//     var row = document.createElement("tr");
+//     row.innerHTML = `
+//         <td>Wednesday</td>
+//         <td>${assignment.matching}</td>
+//         <td>${assignment.redBasket}</td>
+//         <td>${assignment.closing}</td>
+//         <td>${assignment.blueLights10To12.join("<br>")}</td>
+//         <td>${assignment.blueLights12ToOn.join("<br>")}</td>
+//         <td>${assignment.induction1To3.join("<br>")}</td>
+//         <td>${assignment.induction4To6.join("<br>")}</td>
+//         <td>${assignment.induction7To9.join("<br>")}</td>
+//         <td>${assignment.reservedForce.join("<br>")}</td>
+//     `;
+//     outputContainer.lastChild.appendChild(row);
+
     
-}
+// });
 
-// Generate team assignments for each day and week
-// Week 1
-generateTeamAssignments("Week1", "Sunday");
-generateTeamAssignments("Week1", "Monday");
-generateTeamAssignments("Week1", "Tuesday");
-generateTeamAssignments("Week1", "Wednesday");
-generateTeamAssignments("Week1", "Thursday");
+// // Thursday Week 1----------------------------------------------------------------------------------------------------------------------------
 
-// Week 2
-generateTeamAssignments("Week2", "Sunday");
-generateTeamAssignments("Week2", "Monday");
-generateTeamAssignments("Week2", "Tuesday");
-generateTeamAssignments("Week2", "Wednesday");
-generateTeamAssignments("Week2", "Thursday");
+// function generateAssignments(iterations) {
+//     var allNames = [
+//         "Khrizzelle", "Bhupinder", "Jagdeep", "Domenic", "Sonam", "Rushi",
+//         "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
+//         "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Arshdeep", "Foram"
+//     ];
 
-// Week 3
-generateTeamAssignments("Week3", "Sunday");
-generateTeamAssignments("Week3", "Monday");
-generateTeamAssignments("Week3", "Tuesday");
-generateTeamAssignments("Week3", "Wednesday");
-generateTeamAssignments("Week3", "Thursday");
+//     var results = [];
 
-// Week 4
-generateTeamAssignments("Week4", "Sunday");
-generateTeamAssignments("Week4", "Monday");
-generateTeamAssignments("Week4", "Tuesday");
-generateTeamAssignments("Week4", "Wednesday");
-generateTeamAssignments("Week4", "Thursday");
+//     for (var i = 0; i < iterations; i++) {
+//         var shuffledNames = [...allNames].sort(() => Math.random() - 0.5);
+//         var SundayMatching = shuffledNames[0];
+
+//         var SundayReservedForceList = [...allNames];
+//         SundayReservedForceList.splice(SundayReservedForceList.indexOf(SundayMatching), 1);
+//         var SundayReservedForce = [...SundayReservedForceList];
+
+//         var BlueLightsExemptionPeople = [
+//             "Khrizzelle", "Panamdeep", "Sonam", "Jagdeep"
+//         ];
+
+//         var BlueLights10To12 = [];
+//         var BlueLights12ToOn = [];
+
+//         while (BlueLights10To12.length < 2) {
+//             var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             var selectedName = SundayReservedForce[randomIndex];
+//             if (!BlueLightsExemptionPeople.includes(selectedName)) {
+//                 BlueLights10To12.push(selectedName);
+//                 SundayReservedForce.splice(randomIndex, 1);
+//             }
+//         }
+//         while (BlueLights12ToOn.length < 2) {
+//             var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             var selectedName = SundayReservedForce[randomIndex];
+//             if (!BlueLightsExemptionPeople.includes(selectedName)) {
+//                 BlueLights12ToOn.push(selectedName);
+//                 SundayReservedForce.splice(randomIndex, 1);
+//             }
+//         }
+
+//         var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//         var SundayRedBasket = SundayReservedForce[randomIndex];
+//         SundayReservedForce.splice(randomIndex, 1);
+
+//         randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//         var SundayClosing = SundayReservedForce[randomIndex];
+//         SundayReservedForce.splice(randomIndex, 1);
+
+//         var InductionFirstSecondThree = [];
+//         var InductionFourthFifthSixth = [];
+//         var InductionSeventhEighthNinth = [];
+
+//         while (InductionFirstSecondThree.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionFirstSecondThree.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+//         while (InductionFourthFifthSixth.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionFourthFifthSixth.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+//         while (InductionSeventhEighthNinth.length < 3) {
+//             randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
+//             InductionSeventhEighthNinth.push(SundayReservedForce[randomIndex]);
+//             SundayReservedForce.splice(randomIndex, 1);
+//         }
+
+//         results.push({
+//             matching: SundayMatching,
+//             redBasket: SundayRedBasket,
+//             closing: SundayClosing,
+//             blueLights10To12: [...BlueLights10To12],
+//             blueLights12ToOn: [...BlueLights12ToOn],
+//             induction1To3: [...InductionFirstSecondThree],
+//             induction4To6: [...InductionFourthFifthSixth],
+//             induction7To9: [...InductionSeventhEighthNinth],
+//             reservedForce: [...SundayReservedForce]
+//         });
+//     }
+
+//     return results;
+// }
+
+// var outputContainer = document.getElementById("output");
+// var assignments = generateAssignments(1);
+
+
+// var dayIndex = 0;
+
+// assignments.forEach(function (assignment) {
+
+//     var row = document.createElement("tr");
+//     row.innerHTML = `
+//         <td>Thursday</td>
+//         <td>${assignment.matching}</td>
+//         <td>${assignment.redBasket}</td>
+//         <td>${assignment.closing}</td>
+//         <td>${assignment.blueLights10To12.join("<br>")}</td>
+//         <td>${assignment.blueLights12ToOn.join("<br>")}</td>
+//         <td>${assignment.induction1To3.join("<br>")}</td>
+//         <td>${assignment.induction4To6.join("<br>")}</td>
+//         <td>${assignment.induction7To9.join("<br>")}</td>
+//         <td>${assignment.reservedForce.join("<br>")}</td>
+//     `;
+//     outputContainer.lastChild.appendChild(row);
+
+    
+// });
+
+
+// // BlueLight 10 to 12
+// var SundayBlueLight10to12
+// var MondayBlueLight10to12
+// var TuesdayBlueLight10to12
+// var WednesdayBlueLight10to12
+// var ThursdayBlueLight10to12
+
+// // BlueLights 12 to Onwards
+// var SundayBlueLight12toOn
+// var MondayBlueLight12toOn
+// var TuesdayBlueLight12toOn
+// var WednesdayBlueLight12toOn
+// var ThursdayBlueLight12toOn

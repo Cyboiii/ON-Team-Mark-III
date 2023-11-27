@@ -2,7 +2,7 @@
 var allNames = [
     "Khrizzelle", "Bhupinder", "Jagdeep", "Domenic", "Sonam", "Rushi",
     "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
-    "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Arshdeep", "Foram"
+    "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Arshdeep", "Foram", "Aseem"
 ];
 
 // Sunday Week 1----------------------------------------------------------------------------------------------------------------------------
@@ -92,31 +92,11 @@ var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
 var dayIndex = 0;
 
 assignments.forEach(function (assignment, index) {
-    if (index % 5 === 0) {
-        if (index !== 0) {
-            outputContainer.appendChild(document.createElement("hr"));
-        }
-        var table = document.createElement("table");
-        var headerRow = document.createElement("tr");
-        headerRow.innerHTML = `
-            <th>Weekday</th>
-            <th>Matching</th>
-            <th>RedBasket & Jackpot</th>
-            <th>Closing</th>
-            <th>BlueLights 10 to 12</th>
-            <th>BlueLights 12 to Onwards</th>
-            <th>Induction 10 to 12</th>
-            <th>Induction 12 to 2</th>
-            <th>Induction 2 to 4</th>
-            <th>Stand By</th>
-        `;
-        table.appendChild(headerRow);
-        outputContainer.appendChild(table);
-    }
+
 
     var row = document.createElement("tr");
     row.innerHTML = `
-        <td>Sunday</td>
+        <td>Tuesday</td>
         <td>${assignment.matching}</td>
         <td>${assignment.redBasket}</td>
         <td>${assignment.closing}</td>
