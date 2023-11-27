@@ -1,8 +1,8 @@
 // Define allNames array globally
 var allNames = [
-    "Khrizzelle", "Bhupinder", "Jagdeep", "Domenic", "Sonam", "Rushi",
+    "       ", "Bhupinder", "       ", "Domenic", "Sonam", "Rushi",
     "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
-    "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Arshdeep", "Foram", "Aseem"
+    "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Harshdeep", "Foram", "Aseem"
 ];
 
 // Sunday Week 1----------------------------------------------------------------------------------------------------------------------------
