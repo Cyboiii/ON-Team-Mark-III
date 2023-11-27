@@ -16,7 +16,7 @@ function generateAssignments(iterations) {
         var SundayReservedForceList = [...allNames];
         SundayReservedForceList.splice(SundayReservedForceList.indexOf(SundayMatching), 1);
         var SundayReservedForce = [...SundayReservedForceList];
-        var BlueLightsExemptionPeople = ["Khrizzelle", "Panamdeep", "Sonam", "Jagdeep"];
+        var BlueLightsExemptionPeople = ["Khrizzelle", "Panamdeep", "Sonam", "Jagdeep","       "];
         var BlueLights10To12 = [];
         var BlueLights12ToOn = [];
 
