@@ -2,7 +2,7 @@
 var allNames = [
     "       ", "Bhupinder", "       ", "Dominic", "Sonam", "Rushi",
     "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
-    "Pabdeep", "Jagjit", "Janaki", "Jasmeen", "Darshan", "Harshdeep", "Foram"
+    "Pabdeep", "Jagjit", "Janaki", "Jasmeen", "Darshan", "Harshdeep", "Foram", "Ronak"
 ];
 var allNamesNew = [
     "       ", "Bhupinder", "       ", "Dominic", "Sonam", "Rushi",
