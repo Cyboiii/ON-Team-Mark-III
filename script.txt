@@ -452,16 +452,3 @@
 // });
 
 
-// // BlueLight 10 to 12
-// var SundayBlueLight10to12
-// var MondayBlueLight10to12
-// var TuesdayBlueLight10to12
-// var WednesdayBlueLight10to12
-// var ThursdayBlueLight10to12
-
-// // BlueLights 12 to Onwards
-// var SundayBlueLight12toOn
-// var MondayBlueLight12toOn
-// var TuesdayBlueLight12toOn
-// var WednesdayBlueLight12toOn
-// var ThursdayBlueLight12toOn

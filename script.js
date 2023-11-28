@@ -1,12 +1,20 @@
 // Define allNames array globally
 var allNames = [
-    "       ", "Bhupinder", "       ", "Domenic", "Sonam", "Rushi",
+    "       ", "Bhupinder", "       ", "Dominic", "Sonam", "Rushi",
     "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
-    "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Harshdeep", "Foram"
+    "Pabdeep", "Jagjit", "Janaki", "Jasmeen", "Darshan", "Harshdeep", "Foram"
+];
+var allNamesNew = [
+    "       ", "Bhupinder", "       ", "Dominic", "Sonam", "Rushi",
+    "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
+    "Pabdeep", "Jagjit", "Janaki", "Jasmeen", "Darshan", "Harshdeep", "Foram", "Aseem"
 ];
 
-// Sunday Week 1----------------------------------------------------------------------------------------------------------------------------
+// BlueLight 10 to 12
+var SundayBlueLight10to12 = [];
+var SundayBlueLight12toOn = [];
 
+// Sunday Week 1----------------------------------------------------------------------------------------------------------------------------
 function generateAssignments(iterations) {
     var results = [];
 
@@ -25,6 +33,7 @@ function generateAssignments(iterations) {
             var selectedName = SundayReservedForce[randomIndex];
             if (!BlueLightsExemptionPeople.includes(selectedName)) {
                 BlueLights10To12.push(selectedName);
+                SundayBlueLight10to12 = [...BlueLights10To12];
                 SundayReservedForce.splice(randomIndex, 1);
             }
         }
@@ -34,10 +43,11 @@ function generateAssignments(iterations) {
             var selectedName = SundayReservedForce[randomIndex];
             if (!BlueLightsExemptionPeople.includes(selectedName)) {
                 BlueLights12ToOn.push(selectedName);
+                SundayBlueLight12toOn = [...BlueLights12ToOn];
                 SundayReservedForce.splice(randomIndex, 1);
             }
         }
-
+        
         var randomIndex = Math.floor(Math.random() * SundayReservedForce.length);
         var SundayRedBasket = SundayReservedForce[randomIndex];
         SundayReservedForce.splice(randomIndex, 1);
@@ -103,11 +113,11 @@ assignments.forEach(function (assignment, index) {
             <th>Matching</th>
             <th>RedBasket & Jackpot</th>
             <th>Closing</th>
-            <th>BlueLights 10 to 12</th>
-            <th>BlueLights 12 to Onwards</th>
-            <th>Induction 10 to 12</th>
-            <th>Induction 12 to 2</th>
-            <th>Induction 2 to 4</th>
+            <th>BlueLights:<br>10 to 12</th>
+            <th>BlueLights:<br>12 to Onwards</th>
+            <th>Induction:<br>10 to 12</th>
+            <th>Induction:<br>12 to 2</th>
+            <th>Induction:<br>2 to 4</th>
             <th>Stand By</th>
         `;
         table.appendChild(headerRow);
@@ -131,3 +141,6 @@ assignments.forEach(function (assignment, index) {
 
     dayIndex = (dayIndex + 1) % daysOfWeek.length;
 });
+
+console.log('SundayBlueLight10to12:', SundayBlueLight10to12);
+console.log('SundayBlueLight12toOn:', SundayBlueLight12toOn); 

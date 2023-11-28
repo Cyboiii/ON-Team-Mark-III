@@ -1,10 +1,6 @@
 // Define allNames array globally
-var allNames = [
-    "       ", "Bhupinder", "       ", "Domenic", "Sonam", "Rushi",
-    "Lovepreet", "Panamdeep", "Manish", "Harinderbir", "Mandeep",
-    "Pabdeep", "Jagjit", "Janki", "Jasmen", "Darshan", "Harshdeep", "Foram"
-];
-
+var MondayBlueLight10to12 = [];
+var MondayBlueLight12toOn = [];
 // Sunday Week 1----------------------------------------------------------------------------------------------------------------------------
 
 function generateAssignments(iterations) {
@@ -25,6 +21,7 @@ function generateAssignments(iterations) {
             var selectedName = SundayReservedForce[randomIndex];
             if (!BlueLightsExemptionPeople.includes(selectedName)) {
                 BlueLights10To12.push(selectedName);
+                MondayBlueLight10to12 = [...BlueLights10To12]
                 SundayReservedForce.splice(randomIndex, 1);
             }
         }
@@ -34,6 +31,7 @@ function generateAssignments(iterations) {
             var selectedName = SundayReservedForce[randomIndex];
             if (!BlueLightsExemptionPeople.includes(selectedName)) {
                 BlueLights12ToOn.push(selectedName);
+                MondayBlueLight12toOn = [...BlueLights12ToOn]
                 SundayReservedForce.splice(randomIndex, 1);
             }
         }
@@ -110,3 +108,6 @@ assignments.forEach(function (assignment, index) {
 
     dayIndex = (dayIndex + 1) % daysOfWeek.length;
 });
+
+console.log('MondayBlueLight10to12:', MondayBlueLight10to12);
+console.log('MondayBlueLight12toOn:', MondayBlueLight12toOn); 
